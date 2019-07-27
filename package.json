@@ -1,6 +1,9 @@
 {
   "name": "jskey-kwdb",
   "version": "0.0.0",
+  "bin":{
+    "jskey-kwdb": "./index.js"
+  },
   "description": "A keyword database management tool that is a major part of my jskey set of CLI tools. The aim of jskey-kwdb is to have a CLI tool that just manages things like creating, droping, and managing records for targeted organic search keywords. The tool can also be used to create indexes for each search term in relation to markdown files of blog posts. It can also be used to create performance reports for posts as well.",
   "main": "index.js",
   "scripts": {
