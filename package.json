@@ -1,0 +1,22 @@
+{
+  "name": "jskey-kwdb",
+  "version": "1.0.0",
+  "description": "A keyword database management tool that is a major part of my jskey set of CLI tools. The aim of jskey-kwdb is to have a CLI tool that just manages things like creating, droping, and managing records for targeted organic search keywords. The tool can also be used to create indexes for each search term in relation to markdown files of blog posts. It can also be used to create performance reports for posts as well.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinpfister/jskey-kwdb.git"
+  },
+  "author": "Dustin Pfister",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dustinpfister/jskey-kwdb/issues"
+  },
+  "homepage": "https://github.com/dustinpfister/jskey-kwdb#readme",
+  "dependencies": {
+    "yargs": "^13.3.0"
+  }
+}
