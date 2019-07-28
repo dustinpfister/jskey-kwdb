@@ -1,6 +1,6 @@
 {
   "name": "jskey-kwdb",
-  "version": "0.0.0",
+  "version": "0.0.13",
   "bin":{
     "jskey-kwdb": "./index.js"
   },
