@@ -31,3 +31,11 @@ There is a drop command to drop (delete) the database
 ```
 $ jskey-kwdb drop -t db.json
 ```
+
+## Search
+
+As of this writing the search command can be used to just search for a keyword in the keyword database.
+
+```
+$ jskey-kwdb search -t db.json -k "lodash find"
+```

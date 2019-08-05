@@ -4,9 +4,8 @@
   * (done) /lib/mkdirp.js is no longer used in create command for now.
   * (done) using lowdb to create a database
   * (done) using lowdb to add and remove database items
-  * new search command started
-  * search command uses lodb to to get a single keyword for exact match for a search term
-  * search command uses lodb to get and sort a list of keywords for a search term
+  * (done) new search command started
+  * (done) search command uses lodb to to get a single keyword for exact match for a search term
 
 ## 0.0.13 - Alpha I - first release
   * (done) create command for creating a new main db.json file in a keywords folder
