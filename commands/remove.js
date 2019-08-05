@@ -1,6 +1,4 @@
-let path = require('path'),
-fs = require('fs');
-
+let path = require('path');
 // lowdb
 let fileAsync = require('lowdb/adapters/FileAsync'),
 low = require('lowdb'); 
@@ -18,11 +16,9 @@ exports.builder = {
 };
 exports.handler = function (argv) {
     if(argv.t && argv.k){
-
         let filePath = path.resolve(argv.t);
-        
         low(new fileAsync(filePath))
-        // check if the keyword is in all ready
+        // check if the keyword is there and remove if it is
         .then((db)=>{
             let k = db.get('keywords'),
             q = k.find({keyword:argv.k});
@@ -37,77 +33,7 @@ exports.handler = function (argv) {
         .catch((e)=>{
             console.warn(e.message);
         });
-
     }else{
         console.warn('need to give a target path to the database file and a keyword');
     }
 };
-
-/*
-exports.handler = function (argv) {
-
-    if(argv.t && argv.k){
-
-        let target = path.resolve(argv.t);
-        
-        fs.readFile(target,'utf8', (e,data) => {
-            
-            if(e){
-                
-                console.log(e.message);
-                
-            }else{
-                
-                try{
-                    
-                    let db = JSON.parse(data);
-                    
-                    // remove
-                    db.keywords = db.keywords.reduce((acc, rec, i, kw)=>{
-                        
-                        if(i === 1){
-                            acc = acc.keyword === argv.k ? [] : [acc];
-                        }
-                        
-                        if(rec.keyword != argv.k){
-                            
-                            acc.push(rec);
-                            
-                        }
-                        
-                        return acc;
-                        
-                    });
-                    
-                    
-                    fs.writeFile(target,JSON.stringify(db), (e)=>{
-                        
-                        if(e){
-                            
-                            console.log(e.message);
-                            
-                        }else{
-                            
-                            console.log('database updated');
-                            
-                        }
-                        
-                    });
-                    
-                }catch(e){
-                    
-                    console.log(e.message);
-                    
-                }
-            }
-            
-        });
-        
-    }else{
-        
-        console.log('need to give a target path to the database file and a keyword');
-        
-    }
-      
-};
-*/
