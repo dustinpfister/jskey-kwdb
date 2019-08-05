@@ -1,6 +1,10 @@
 let path = require('path'),
 fs = require('fs');
 
+// lowdb
+let fileAsync = require('lowdb/adapters/FileAsync'),
+low = require('lowdb'); 
+
 exports.command = 'add';
 exports.describe = 'add a keyword to a database';
 exports.builder = {
@@ -8,6 +12,7 @@ exports.builder = {
     t: {
       default: false
     },
+    // keyword to add
     k: {
       default: false
     }
@@ -16,8 +21,27 @@ exports.handler = function (argv) {
 
     if(argv.t && argv.k){
 
-        let target = path.resolve(argv.t);
+        let filePath = path.resolve(argv.t);
         
+        console.log(argv.t, argv.k);
+        
+        low(new fileAsync(filePath))
+    
+        // set defaults
+        .then((db)=>{
+            //console.log(db.value());
+            //return db.defaults({dbName: argv.n,keywords:[]});
+            return db.get('keywords').push({
+                keyword: argv.k
+            }).write();
+        })
+        .then(()=>{
+           
+            console.log('okay');
+            
+        });
+
+/*        
         fs.readFile(target,'utf8', (e,data) => {
             
             if(e){
@@ -55,7 +79,7 @@ exports.handler = function (argv) {
             }
             
         });
-        
+     */   
     }else{
         
         console.log('need to give a target path to the database file and a keyword');

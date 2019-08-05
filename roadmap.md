@@ -1,10 +1,10 @@
-## 0.1.x - Alpha II - lowdb and search command
+## 0.1.x - Alpha II - lowdb and search command started
   * (done) adding lowdb to package.json
   * (done) with the create command changed -t option to be a target file path rather than just a target folder
   * (done) /lib/mkdirp.js is no longer used in create command for now.
-  * using lowdb to create a database
+  * (done) using lowdb to create a database
   * using lowdb to add and remove database items
-  * new search command
+  * new search command started
   * search command uses lodb to to get a single keyword for exact match for a search term
   * search command uses lodb to get and sort a list of keywords for a search term
 
