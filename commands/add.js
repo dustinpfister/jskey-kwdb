@@ -27,62 +27,21 @@ exports.handler = function (argv) {
         
         low(new fileAsync(filePath))
     
-        // set defaults
+        // add keyword
         .then((db)=>{
-            //console.log(db.value());
-            //return db.defaults({dbName: argv.n,keywords:[]});
             return db.get('keywords').push({
                 keyword: argv.k
             }).write();
         })
         .then(()=>{
            
-            console.log('okay');
+            console.log('keyword ' + argv.k + ' added.');
             
         });
 
-/*        
-        fs.readFile(target,'utf8', (e,data) => {
-            
-            if(e){
-                
-                console.log(e.message);
-                
-            }else{
-                
-                try{
-                    
-                    let db = JSON.parse(data);
-                    db.keywords.push({
-                        keyword: argv.k
-                    });
-                    
-                    fs.writeFile(target,JSON.stringify(db), (e)=>{
-                        
-                        if(e){
-                            
-                            console.log(e.message);
-                            
-                        }else{
-                            
-                            console.log('database updated');
-                            
-                        }
-                        
-                    });
-                    
-                }catch(e){
-                    
-                    console.log(e.message);
-                    
-                }
-            }
-            
-        });
-     */   
     }else{
         
-        console.log('need to give a target path to the database file and a keyword');
+        console.warn('need to give a target path to the database file and a keyword');
         
     }
       
