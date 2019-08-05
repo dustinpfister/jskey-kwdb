@@ -23,10 +23,19 @@ exports.handler = function (argv) {
 
         let filePath = path.resolve(argv.t);
         
-        console.log(argv.t, argv.k);
-        
         low(new fileAsync(filePath))
-    
+        
+        .then((db)=>{
+        
+            let q = db.get('keywords').find({keyword:argv.k}).value();
+            
+            if(q){
+                return Promise.reject(new Error('keyword: ' + argv.k + ' is all ready in the database'));
+            }
+            
+            return db;
+            
+        })
         // add keyword
         .then((db)=>{
             return db.get('keywords').push({
@@ -34,9 +43,10 @@ exports.handler = function (argv) {
             }).write();
         })
         .then(()=>{
-           
             console.log('keyword ' + argv.k + ' added.');
-            
+        })
+        .catch((e)=>{
+            console.warn(e.message);
         });
 
     }else{
