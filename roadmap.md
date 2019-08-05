@@ -1,4 +1,4 @@
-## 0.1.x - Alpha II - lowdb and search command started
+## 0.1.15 - Alpha II - lowdb and search command started
   * (done) adding lowdb to package.json
   * (done) with the create command changed -t option to be a target file path rather than just a target folder
   * (done) /lib/mkdirp.js is no longer used in create command for now.
