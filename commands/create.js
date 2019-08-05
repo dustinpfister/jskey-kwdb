@@ -33,10 +33,26 @@ exports.handler = function (argv) {
         console.log(db.value());
         return db.defaults({dbName: argv.n,keywords:[]});
     })
+    // defaults
+    //.defaults({dbName: argv.n,keywords:[]})
+    // write
+    //.write()
     .then((db)=>{
+        
         console.log(db.value());
+        return db.write();
+        
+    })
+    // log to console
+    .then((db)=>{
+        //console.log(db.value());
+        console.log(db);
         console.log('new database at: ');
         console.log(filePath);        
+    })
+    // if error
+    .catch((e)=>{
+        console.warn(e.message);
     });
     
 };
