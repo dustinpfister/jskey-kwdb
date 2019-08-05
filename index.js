@@ -5,4 +5,5 @@ require('yargs')
 .command(require('./commands/drop.js'))
 .command(require('./commands/add.js'))
 .command(require('./commands/remove.js'))
+.command(require('./commands/search.js'))
 .argv;
