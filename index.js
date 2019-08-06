@@ -12,6 +12,6 @@ require('yargs')
 
 // search and weight
 .command(require('./commands/search.js'))
-.command(require('./commands/weight.js'))
+.command(require('./commands/weight/index.js'))
 
 .argv;
