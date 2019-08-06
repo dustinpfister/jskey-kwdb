@@ -12,19 +12,32 @@ exports.builder = {
     },
     // keyword to use
     k: {
-      default: false
+      default: ''
+    },
+    s: {
+      default : path.join(__dirname, 'term_freq.js')
     }
 };
 exports.handler = function (argv) {
-    console.log('weight command');
+
     if(!argv.t && !argv.k){
         console.warn('must give a single keyword with -k option or a database to use via -t option');
         console.warn('must also supply text via the standard input.');
     }
     
+    
+    let weightFunction = require(path.resolve(argv.s));
+    
+    let text = '';
     process.stdin.on('data', (data) => {
         
-        console.log(data.toString());
+        text += data.toString();
+        
+    });
+    
+    process.stdin.on('end', () => {
+        
+        console.log(weightFunction(text, argv.k));
         
     });
 };
