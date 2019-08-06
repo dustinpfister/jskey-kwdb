@@ -1,5 +1,5 @@
 ## 0.2.x - Alpha III - weight command
-  * new weight command
+  * (done) new weight command
   * in post command a blog post body text can be given to jskey-kwdb via the standard input
   * a script can be given via the -s option that will be used to create a weight value for
   each keyword in the database or a built in one will be used.

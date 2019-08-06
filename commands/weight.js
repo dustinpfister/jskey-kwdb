@@ -21,4 +21,10 @@ exports.handler = function (argv) {
         console.warn('must give a single keyword with -k option or a database to use via -t option');
         console.warn('must also supply text via the standard input.');
     }
+    
+    process.stdin.on('data', (data) => {
+        
+        console.log(data.toString());
+        
+    });
 };
