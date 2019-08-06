@@ -1,9 +1,9 @@
 ## 0.2.x - Alpha III - weight command
   * (done) new weight command
   * (done) in post command a blog post body text can be given to jskey-kwdb via the standard input
-  * a script can be given via the -s option that will be used to create a weight value for
+  * (done) a script can be given via the -s option that will be used to create a weight value for
   each keyword in the database or a built in one will be used.
-  * the post command creates a weight value for the body of text based on the given script
+  * (done) the post command creates a weight value for the body of text based on the given script
 
 ## 0.1.15 - Alpha II - lowdb and search command started
   * (done) adding lowdb to package.json

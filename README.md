@@ -39,3 +39,33 @@ As of this writing the search command can be used to just search for a keyword i
 ```
 $ jskey-kwdb search -t db.json -k "lodash find"
 ```
+
+## Weight command
+
+The weight command can be used to compute a weight value for a body of text that is given via the standard input. There is a number of built in weight functions, but it would be best to write your own and use it via the -s option when using the weight command.
+
+When making a weight function the first argument is the body of text, and the second is the keyword or search term of interest.
+
+Say I have a file called weight.js that looks like this
+
+```js
+module.exports = (text, keyword) => {
+    
+    let weight = 0,
+    totalMatch = text.match(new RegExp(keyword, 'g'));
+    
+    // how does one or more total Match counts effect weight?
+    if(totalMatch){
+       weight += totalMatch.length;
+    }
+    
+    return weight;
+    
+};
+```
+Text can then be piped to it in the command line, and a value will be returned that is the weight value for that text based on the given weight function.
+
+```
+echo "foo bar baz foo" | jskey-kwdb weight -k "foo" -s weight.js
+2
+```
