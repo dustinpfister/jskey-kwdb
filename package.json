@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dustinpfister/jskey-kwdb#readme",
   "dependencies": {
     "lowdb": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "yargs": "^13.3.0"
   }
 }
