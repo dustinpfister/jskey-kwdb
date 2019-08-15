@@ -4,8 +4,8 @@
   * (done) a script can be given via the -s option that will be used to create a weight value for
   each keyword in the database or a built in one will be used.
   * (done) the post command creates a weight value for the body of text based on the given script
-  * make mkdirp part of the stack
-  * use mkdirp to create target path for new databse in create command
+  * (done)make mkdirp part of the stack
+  * (done) use mkdirp to create target path for new databse in create command
   * remove my own mkdirp lib
 
 ## 0.1.15 - Alpha II - lowdb and search command started
