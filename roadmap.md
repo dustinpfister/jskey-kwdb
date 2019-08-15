@@ -6,7 +6,7 @@
   * (done) the post command creates a weight value for the body of text based on the given script
   * (done)make mkdirp part of the stack
   * (done) use mkdirp to create target path for new databse in create command
-  * remove my own mkdirp lib
+  * (done) remove my own mkdirp lib
 
 ## 0.1.15 - Alpha II - lowdb and search command started
   * (done) adding lowdb to package.json
