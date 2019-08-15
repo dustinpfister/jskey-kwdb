@@ -1,10 +1,18 @@
-## 0.2.x - Alpha III - weight command
+## 0.3.x - Alpha IV - Building a rank list for the dataBase
+  * weight command should work with the -t option where a database is given
+  * when given the -t option the weight command will create a weight value for each keyword in the database
+  * The weight command still just spits out results to the standard output
+  * The weight command updates the keyword database with a list of posts that rank well for it
+  * the limit of posts that will be stored for a keyword is limited by a hard coded default of 5
+  * the default limit of posts can be set higher or lower with a dataBase property postLimit
+
+## 0.2.10 - Alpha III - weight command
   * (done) new weight command
   * (done) in post command a blog post body text can be given to jskey-kwdb via the standard input
   * (done) a script can be given via the -s option that will be used to create a weight value for
   each keyword in the database or a built in one will be used.
-  * (done) the post command creates a weight value for the body of text based on the given script
-  * (done)make mkdirp part of the stack
+  * (done) the weight command creates a weight value for the body of text based on the given script
+  * (done) make mkdirp part of the stack
   * (done) use mkdirp to create target path for new databse in create command
   * (done) remove my own mkdirp lib
 
